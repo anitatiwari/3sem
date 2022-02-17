@@ -1,0 +1,17 @@
+
+#scrolling_bars {
+    display: flex;
+    gap: 1px;
+    margin: 1rem 1rem;
+    height: 19rem;
+    background-color: rgba(0, 0, 0, 0.712);
+    overflow: hidden;
+    justify-content: end;
+    align-items: flex-end;
+  }
+  .bar {
+	min-width: calc(100% / 40);
+	background-color: rgb(20, 2, 5);
+	border: 2px rgb(206, 197, 199) solid;
+	margin-inline: 0.02em;
+}

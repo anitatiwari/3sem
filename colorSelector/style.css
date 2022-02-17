@@ -1,0 +1,33 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+margin: 2rem;
+}
+#color{
+    display: grid;
+    grid-template-columns:  2fr 2fr ;
+    font-size: 2rem;
+  text-align: center;
+    border: 2px solid rgb(133, 132, 132);
+}
+#colorbox {
+  display: inline-block;
+  width: 10vw;
+  height: 5vw;
+}
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: rgb(75, 73, 73);
+  font-size: 1.2rem;
+}
+#box {
+    display: inline-block;
+    margin-left: 10vw;
+    background-color: black;
+    height: 10rem;
+    width: 10rem;
+
+
+    border-radius: 10%;
+    
+  }

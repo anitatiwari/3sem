@@ -1,0 +1,31 @@
+
+*{
+    margin: 0;
+}
+.typewritten {
+
+    font-family: 'Special Elite', cursive; 
+
+}
+
+h1{
+    margin: 0 auto;
+display: inline-block;
+}
+h1:after{
+    content: '';
+     display: inline-block;
+     background-color: rgb(0, 0, 0);
+     margin-left: 2px;
+     height: 25px;
+   width: 4px;
+       animation: cursor 0.4s infinite;
+   }
+
+   /* The typewriter cursor effect */
+   @keyframes cursor {
+       0% { opacity: 1; }
+         49% { opacity: 1; }
+         50% { opacity: 0; }
+         100% { opacity: 0; }
+   }
