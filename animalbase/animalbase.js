@@ -11,6 +11,13 @@ const Animal = {
   type: "",
   age: 0,
 };
+const setting={
+    filterBy:"all",
+    sortBy: "name",
+    sortDir: "asc"
+}
+
+// let filterBy="all"
 
 function start() {
   console.log("ready");
@@ -35,11 +42,6 @@ function registeredbtn(){
 
 }
 
-function selectFilter(event){
-    const filter=event.target.dataset.filter;
-    console.log(`user selected ${filter}`)
-    filterList(filter);
-}
 
 
 
@@ -69,17 +71,29 @@ function preapareObject(jsonObject) {
 
   return animal;
 }
-function filterList(animalType) {
-  let filteredList = allAnimals;
-  if (animalType === "cat") {
+
+function selectFilter(event){
+    const filter=event.target.dataset.filter;
+    console.log(`user selected ${filter}`)
+    // filterList(filter);
+    setfilter(filter);
+}
+function setfilter(filter){
+    setting.filterBy=filter;
+    buildList()
+}
+
+function filterList(filteredList) {
+//   let filteredList = allAnimals;
+  if (setting.filterBy === "cat") {
     filteredList = allAnimals.filter(iscat);
-  } else if (animalType === "dog"){
+  } else if (setting.filterBy === "dog"){
     filteredList = allAnimals.filter(isdog);
 
   }
 
    console.log(filteredList);
-  displayList(filteredList);
+ return filteredList;
 }
 
 const iscat = function (animal) {
@@ -108,14 +122,20 @@ else{
 
 }
     console.log(`user selected ${sortBy}`)
-    sortList(sortBy,sortDir);
+    setSort(sortBy,sortDir);
 }
 
-function sortList(sortBy,sortDir){
+function setSort(sortBy,sortDir){
+    setting.sortBy=sortBy;
+    setting.sortDir=sortDir;
+    buildList()
+}
+
+function sortList(sortedlist){
    
-    let sortedlist=allAnimals
+    // let sortedlist=allAnimals
     let direction=1;
-    if(sortDir==="desc"){
+    if(setting.sortDir==="desc"){
         direction=-1
     }
     else{
@@ -127,14 +147,19 @@ function sortList(sortBy,sortDir){
 
     function sortByproperty(animalA,animalB)
     {
-        if(animalA[sortBy]<animalB[sortBy]){
+        if(animalA[setting.sortBy]<animalB[setting.sortBy]){
             return -1*direction;
         }
         else{
             return 1*direction
         }
     }
-    displayList(sortedlist)
+   return sortedlist;
+}
+function buildList(){
+    const currentList=filterList(allAnimals);
+   const sortedList=sortList(currentList);
+   displayList(sortedList);
 }
 
 // function sortBytype(animalA,animalB)
