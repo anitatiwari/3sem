@@ -10,6 +10,7 @@ const Animal = {
   desc: "-unknown animal-",
   type: "",
   age: 0,
+  star:false
 };
 const setting={
     filterBy:"all",
@@ -56,8 +57,9 @@ async function loadJSON() {
 function prepareObjects(jsonData) {
   allAnimals = jsonData.map(preapareObject);
 
-  // TODO: This might not be the function we want to call first
-  displayList(allAnimals);
+  // TODO: This might not be the function we want to call first--
+  //fixed function
+  buildList();
 }
 
 function preapareObject(jsonObject) {
@@ -114,6 +116,12 @@ const iscat = function (animal) {
 function selectsort(event){
     const sortBy=event.target.dataset.sort;
 const sortDir=event.target.dataset.sortDirection;
+//find old sortby element
+const oldElement=document.querySelector(`[data-sort='${setting.sortBy}']`);
+oldElement.classList.remove("sortby");
+
+//indicate active sort
+event.target.classList.add("sortby");
 if (sortDir==="asc"){
     event.target.dataset.sortDirection="desc"
 }
@@ -193,6 +201,24 @@ function displayAnimal(animal) {
   clone.querySelector("[data-field=type]").textContent = animal.type;
   clone.querySelector("[data-field=age]").textContent = animal.age;
 
+  if(animal.star==true){
+    clone.querySelector("[data-field=star]").textContent = "🌟";
+
+  }
+  else{
+    clone.querySelector("[data-field=star]").textContent = "☆";
+    
+  }
+  clone.querySelector("[data-field=star]").addEventListener("click",clickStar);
+  function clickStar(){
+      if(animal.star==true){
+          animal.star=false
+      }
+      else{
+          animal.star=true
+      }
+      buildList();
+  }
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
 }
