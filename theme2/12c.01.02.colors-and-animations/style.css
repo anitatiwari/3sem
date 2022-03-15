@@ -1,0 +1,366 @@
+html{
+  --bg: #fff;
+  --bg-panel: #d3b8b8;
+  --color-heading: rgb(9, 80, 3); 
+  --color-text: #131010;
+  --graphics-color: #354b46;
+  --border: rgba( 0, 0, 0,0.5)
+}
+/* dark theme styling - Here, we set data-them as "dark"*/
+html[data-theme='dark'] {
+  --bg: #333333;
+  --bg-panel: #4e4d4d;
+  --color-heading: #949356; 
+  --color-text: #e2dee2;
+  --graphics-color: #8a848a;
+  --border: rgb(184, 174, 174);
+}
+
+.container {
+  background-color: var(--bg-panel); 
+  /* margin: 5em;
+  padding: 5em; */
+
+  display: -ms-grid;
+  /* display: grid;
+  -ms-grid-columns: 80% auto;
+      grid-template-columns: 80% auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "title switch"
+ "content content"; */
+}
+.container h1 {
+  margin: 0;
+  color: var(--color-heading); /* heading 1 background color variable */
+
+}
+.container h2 {
+  margin: 0;
+  color: var(--color-heading); /* heading 1 background color variable */
+
+}
+
+.container p {
+  color: var(--color-text); /* text-color variable */
+  -ms-grid-column-span: 2;
+  grid-area: content;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  margin-top: 2em;
+}
+.container a{
+  color: var(--color-text)
+}
+input[type=checkbox] { /* styling for input element */
+  height: 0;
+  width: 0;
+  visibility: hidden;
+
+}
+
+label { /* styling for labels */
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: var(--graphics-color);
+  float: right;
+  border-radius: 100px;
+  position: relative;
+ 
+}
+
+label:after { /* styling for labels - on toggle */
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--bg);
+    border-radius: 90px;
+  -webkit-transition: 0.2s;
+  transition: 0.3s;
+}
+
+input:checked + label { /* conditional check while toggling */
+  background: var(--color-text);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 40px;
+}
+
+
+
+/* Resetter */
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+/* Fonts */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-heading);
+  font-family: "Noto Serif Display", serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 1.953rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  color: rgb(58, 13, 13);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight:bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* UI Elements */
+button {
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #222;
+  color: #eee;
+}
+
+.dark_button {
+  background-color: #000;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 250px;
+  height: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: #eee;
+  border-color: #ddd;
+  color: #222;
+}
+
+/* Menu */
+nav{
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--color-text);
+ position: sticky;
+ top: 0;
+  border-bottom: 2px solid var(--border);
+}
+nav {
+  box-shadow:inset 0 10px 0 rgba(122, 121, 121, 0.1);
+}
+
+nav a {
+  color:var(--color-text);
+  text-decoration: none;
+
+}
+
+nav a.logo {
+  font-family: "Noto Serif Display", serif;
+  font-size: 1.25rem;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0px 1rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  min-height: 80vh;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--bg);
+}
+
+header h1 {
+  color: #eee;
+}
+
+header p {
+  color: #ddd;
+}
+
+header button {
+  margin-bottom: 5rem;
+}
+
+.header_text {
+  width: 30vw;
+  min-width: 300px;
+  padding: 2em;
+}
+
+.header_graphics {
+  width: 30vw;
+  height: 30vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 300px;
+  background-color:var(--graphics-color);
+ 
+}
+
+/* product section */
+#product {
+  
+  background-color: #ddd;
+}
+
+#product h3 {
+  font-size: 1.953rem;
+  line-height: 2.5rem;
+}
+
+#product article {
+  display: flex;
+  min-height: 50vh;
+  /* padding: 2rem; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product_text {
+  width: 50vw;
+  min-width: 300px;
+}
+
+.product_graphics {
+  width: 15vw;
+  height: 15vw;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 3rem;
+  background-color: var( --graphics-color);
+  border-radius: 300px;
+}
+
+/* highlight sections */
+.highlight {
+  display: flex;
+  min-height: 70vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.highlight div {
+  width: 80vw;
+}
+
+.highlight div h2 {
+  font-size: 3.052rem;
+  line-height: 4rem;
+}
+
+.dark {
+  background-color: var(--bg);
+}
+
+.dark h2 {
+  color: var(--color-text);
+}
+
+.dark a {
+  color:var(--color-text);
+} 
+
+/* request section */
+#request {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: #ccc; */
+}
+
+#request div {
+  width: 50vw;
+  min-width: 450px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  padding: 5vh 2rem;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #111;
+  color: #ddd;
+}
+
+footer h2, footer h3 {
+  color: #eee;
+}
+
+footer a {
+  color: #ddd;
+}
+
+footer section.left {
+  display: flex;
+  max-width: 50vw;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer section div {
+  margin: 0px 1rem 1rem 1rem;
+}
