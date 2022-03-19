@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans&display=swap');
 /* Resetter */
 * {
   margin: 0px;
@@ -21,19 +22,15 @@
 h1, h2, h3 {
   color: var(--color-darker);
   padding-bottom: 20px;
+
+
+}
+h1, h2{
+  letter-spacing: 3px;
+  font-family: 'Abril Fatface', cursive;
+
 }
 
-h1 {
-  font-family: 'Roboto', sans-serif;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-}
-
-h3 {
-  font-family: 'Roboto', sans-serif;
-}
 
 p{
   color: var(--color-dark);
@@ -147,6 +144,18 @@ header {
 #cards {
   min-height: 80vh;
   padding: 5rem 2rem;
+  
+
+}
+.card{
+  background-color: rgba(0,0, 0, 0.1);
+min-width: 10vw;
+box-sizing: border-box;
+border-radius: 5%;
+display: flex;
+flex-direction: column;
+padding: 2vw;
+
 }
 
 #card_container {
@@ -154,7 +163,60 @@ header {
   margin-top: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
-  justify-items: center;
+
+}
+.card_name{
+display: block;
+margin: auto;
+}
+.card_image{
+  border-radius: 2%;
+  margin: 2vw 0 1vw 0;
+  border: 2px solid rgb(151, 101, 101);
+ 
+}
+.card_slogan{
+
+font-size:medium;
+
+font-style: italic;
+color: rgb(92, 89, 47);
+}
+.card_title{
+ 
+color: rgb(27, 12, 41);
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card_mail{
+  margin: 0 2vw;
+
+}
+.card_button_negative{
+background-color: rgb(170, 98, 98);
+border: none;
+padding: 1vw;
+border-radius: 2vw;
+font-weight: bold;
+color: aliceblue;
+margin: .5vw;
+}
+.card_button_negative:hover{
+background-color: rgb(170, 10, 10);
+}
+.card_button_positive:hover{
+  background-color: darkgreen;
+
+}
+.card_button_positive{
+  background-color: rgb(67, 141, 65);
+  border: none;
+  padding: 1vw;
+  border-radius: 2vw;
+  font-weight: bold;
+  color: rgb(237, 240, 243);
+  margin: .5vw;
+
+
 }
 
 #info {

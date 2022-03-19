@@ -1,0 +1,253 @@
+* {
+    margin: 6px;
+    padding: 0px;
+    list-style: none;
+   
+  }
+
+
+body{
+  background-color: black;
+
+ 
+}
+ a{
+    color:white;
+    text-decoration: none;
+  
+ 
+    flex-direction:row;
+  
+}
+header{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    /* border-bottom: 2px solid rgb(61, 55, 55); */
+}
+nav li{
+    display: inline-block;
+}
+.logo{
+    max-width: 3em;
+}
+
+a:hover{
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(155, 135, 170, 0.4);
+}
+h1{
+    color: rgb(168, 166, 166);
+    font-size: 3rem;
+    width: 3ch;
+    margin: 2em 2em 0px 0px;
+}
+.text_content>p{
+    color: rgb(114, 111, 111);
+    font-size: 2em;
+    /* margin: 1em; */
+    display: flex;
+    justify-content: center;
+    
+
+}
+.front{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.head{
+    margin: 2em 0px 7em 0px;
+}
+.name{
+    font-size: 1.2em;
+    margin-left: .5em;
+}
+/* .head{
+    display: flex;
+} */
+.text_content{
+color: rgba(142, 133, 151, 0.808);
+display: block;
+margin: auto 0;
+
+}
+.cards{
+    display: flex;
+    justify-content: space-around;
+    
+    color: rgb(20, 22, 24);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight:bold;
+    text-align: center;
+    
+   
+}
+.cards img{
+    border-radius: 5%;
+    border: #949c94 2px solid;
+}
+.card{
+    background-color: rgb(211, 216, 216);
+    box-shadow: 0 4px 8px 0 rgba(228, 218, 218, 0.2);
+    transition: 0.3s;
+    border-radius: 5%;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(207, 193, 193, 0.2);
+  }
+.card>p{
+    color: #1b251b;
+}
+p{
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        text-align: center;
+        background-color: rgba(1, 17, 1, 0.534);
+    }
+    .head{
+        display: flex;
+        flex-direction: column;
+    }
+.img{
+    border-radius: 5%;
+ display: flex;
+ justify-content: center;
+ width:10vw;
+ height: 15vh;
+ box-sizing: border-box;
+ border-radius: 5%;
+ margin-top: 7em;
+}
+#img1{
+    top: 10em;
+    right: 15em;
+    
+}
+.card{
+    display: flex;
+    flex-direction: column;
+}
+}
+@media screen and (min-width:800px){
+    .img{
+     
+        width:10vw;
+        height: 15vh;
+        box-sizing: border-box;
+        border-radius: 5%;
+        margin-top: 7em;
+        
+
+    }
+    #img1{
+        top: 10em;
+        right: 15em;
+        
+    }
+
+}
+footer{
+    color: rgb(173, 166, 166);
+    font-family: Arial, Helvetica, sans-serif;
+margin: 2em;
+}
+footer>ul{
+    display: flex;
+}
+h1 {
+
+    animation: type 1s steps(15), blinkTextCursor 500ms steps(44) infinite normal;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    /* border-right: 4px solid rgb(131, 115, 115); */
+    width: 15ch;
+    transform: translateY(-5%) scale(1);
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0ch;
+    }
+    100% {
+      width: 10ch;
+    }
+  }
+.para{
+    width: 30ch;
+    font-size: 1.3em;
+}
+.img5{
+    width: 30vw;
+
+}
+.divide{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    line-height: 2em;
+    margin: 2em;
+}
+.link{
+    text-decoration: underline;
+}
+
+    .button {
+        position: relative;
+        background-color: #107554;
+        border: none;
+        font-size: 28px;
+        color: #FFFFFF;
+        padding: 15px;
+        width: 200px;
+        text-align: center;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 10%;
+      }
+      
+      .button:after {
+        content: "";
+        background: #1b251b;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px!important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+      }
+      
+      .button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+      }
+      @keyframes example {
+        0%   {background-image: url("/1x/th\ \(1\).jpg");left:100px; top:0px;}
+        25%  {background-image: url("1x/th\ \(2\).jpg"); left:200px; top:1px;}
+        50%  {background-image:url("1x/th\ \(3\).jpg"); left:300px; top:50px;}
+        75%  {background-image: url("1x/th\ \(2\).jpg"); left:100px; top:20px;}
+        100% {background-image:url("1x/th\ \(2\).jpg");left:50px; top:1px;}
+      }
+      
+      /* The element to apply the animation to */
+      .graphic{
+        width: 300px;
+        height: 200px;
+        position: relative;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        box-shadow: 2px solid white;
+        
+      }

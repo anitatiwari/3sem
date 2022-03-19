@@ -1,0 +1,36 @@
+.advantages_card_graphics{
+    background-color: rgb(57, 68, 68);
+    width: 10vw;
+    height: 5vw;
+}
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #5e35b1;
+  --primary-hover: #512da8;
+  --primary-focus: rgba(94, 53, 177, 0.125);
+  --primary-inverse: #FFF;
+}
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --primary: #5e35b1;
+      --primary-hover: #673ab7;
+      --primary-focus: rgba(94, 53, 177, 0.25);
+      --primary-inverse: #FFF;
+    }
+  }
+  /* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+    --primary: #5e35b1;
+    --primary-hover: #673ab7;
+    --primary-focus: rgba(94, 53, 177, 0.25);
+    --primary-inverse: #FFF;
+  }
+  :root {
+    --form-element-active-border-color: var(--primary);
+    --form-element-focus-color: var(--primary-focus);
+    --switch-color: var(--primary-inverse);
+    --switch-checked-background-color: var(--primary);
+  }
+@import "path/pico";{
+
+}
